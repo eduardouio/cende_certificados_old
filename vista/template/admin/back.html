@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Administrador CENDE">
+    <meta name="author" content="@eduardouio">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap/admin_bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../../ico/favicon.ico">
+    </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+                    <a class="brand" href="#">Administrador CENDE</a>
+          <div class="nav-collapse">	
+            <ul class="nav">
+              <li class="active"><a href="#">Personas Certificadas</a></li>
+              <li><a href="#about">Personas</a></li>
+              <li><a href="#contact">Tipo Certificados</a></li>
+			  <li><a href="#contact">Acerca de..</a></li>
+            </ul>
+			</div><!--/.nav-collapse -->
+			<p><a href="#about" class="btn btn-large pull-right "> <i class="icon-off icon-black"></i>Salir</a></p>
+		  </div>		  
+      </div>	  
+    </div>
+	
+    <div class="container">
+	
+       <a href="#about" class="btn pull-right"><i class=" icon-file icon-black"></i>Crear Nuevo Registro</a>
+	      <h2>Tipos Certificados CENDE</h2> 
+		  <span class="label label-info">Seleccione un criterio de búsqueda, y seleccione un campo de referencia</span>
+		  <a class="btn btn-info" href="#"><i class="icon-refresh icon-white"></i> Listar Todos</a>
+       		<form class="well form-inline">
+			<input type="text" class="search-query" placeholder="Buscar..">
+			<select class="span2">
+					<option>Seleccion1</option>
+					<option>Seleccion2</option>
+					<option>Seleccion3</option>
+			</select>
+			<button type="submit" class="btn">Buscar</button>
+			</form>
+			 <span class="label label-info">Listado de datos encontrados y acciones disponibles</span>
+			 <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Campo1</th>
+            <th>Campo2</th>
+			<th>Campo1</th>
+            <th>Campo2</th>
+			<th>Campo1</th>
+            <th>Campo2</th>
+			<th>Campo1</th>
+            <th>Campo2</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td >2</td>
+            <td>Mark</td>
+            <td>Otto</td>
+			<td>Mark</td>
+            <td>Otto</td>
+			<td>Mark</td>
+            <td>Otto</td>
+			<td>Mark</td>
+            <td>Otto</td>
+            <td>
+			<a href="#about" class="btn btn-danger btn-mini pull-right"><i class="icon-trash icon-white"></i>Eliminar</a>
+			 <a href="#about" class="btn btn-info btn-mini pull-right"><i class="icon-edit icon-white"></i>Modificar</a> 
+			 
+		 </td>
+          </tr>
+          <tr>
+            <td>Mark</td>
+			<td>Mark</td>
+            <td>Otto</td>
+            <td>Otto</td>
+			<td>Otto</td>
+			<td>Mark</td>
+            <td>Otto</td>
+			<td>Mark</td>
+			<td>Mark</td>
+            <td>
+            <a href="#about" class="btn btn-danger btn-mini pull-right"><i class="icon-trash icon-white"></i>Eliminar</a>
+			 <a href="#about" class="btn btn-info btn-mini pull-right"><i class="icon-edit icon-white"></i>Modificar</a> 
+			</td>	
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+			<td>Thornton</td>
+            <td>@fat</td>
+            <td>@fat</td>
+			<td>Mark</td>
+            <td>Otto</td>
+			<td>Mark</td>
+			<td>
+            <a href="#about" class="btn btn-danger btn-mini pull-right"><i class="icon-trash icon-white"></i>Eliminar</a>
+			 <a href="#about" class="btn btn-info btn-mini pull-right"><i class="icon-edit icon-white"></i>Modificar</a> 
+			</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Larry the Bird</td>
+            <td>@twitter</td>
+			<td>Mark</td>
+            <td>Otto</td>
+			<td>Mark</td>
+			<td>Mark</td>
+            <td>Otto</td>	
+            <td>Mark</td>
+			<td>
+            <a href="#about" class="btn btn-danger btn-mini pull-right"><i class="icon-trash icon-white"></i>Eliminar</a>
+			 <a href="#about" class="btn btn-info btn-mini pull-right"><i class="icon-edit icon-white"></i>Modificar</a> 
+			</td>
+          </tr>
+        </tbody>
+      </table>
+      <footer>
+	  <hr>
+	          &copy; Todos los derechos reservados - Cende NDT - 2012 - Desarrollado por ev_villota@hotmail.com
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+	 -->
+
+  </body>
+</html>

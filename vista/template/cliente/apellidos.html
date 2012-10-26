@@ -1,0 +1,17 @@
+<script type="text/javascript">
+$(function(){
+
+	$('#buscar').autocomplete({
+
+		source : 'ajax.php'
+	});
+	});
+</script>
+<p>&nbsp;</p>
+<div id="advenrtencia">Ingrese su apellido al formulario y el&iacute;jalo de la lista</div>
+</br>
+<form action="consultar.php" class="pull-left" method=post name=pregunta id="pregunta">						
+	<input class="input-big" type="search" placeholder="Apellidos" name="criterio" id="buscar" maxlength="60">
+	<input type="hidden" name="opcion" value ="apellidos">
+	<button class="btn" type="submit"">Buscar</button>
+</form>

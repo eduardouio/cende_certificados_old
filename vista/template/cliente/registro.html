@@ -1,0 +1,18 @@
+<script type="text/javascript">
+$(function(){
+
+	$('#registros').autocomplete({
+
+		source : 'ajaxregistros.php'
+	});
+	});
+</script>
+
+<p>&nbsp;</p>
+<div id="advenrtencia"">Ingrese el c&oacute;digo de registro de la certificaci&oacute;n NDT ejemplo CEN-CC-001 </div>
+</br>
+<form action="consultar.php" class="pull-left" method=post name=pregunta id="pregunta">						
+	<input class="input-small" type="search" placeholder="CEN-CC-001" name="criterio" maxlength="10" id="registros">
+	<input type="hidden" name="opcion" value ="registro">
+	<button class="btn" type="submit"">Buscar</button>
+</form>

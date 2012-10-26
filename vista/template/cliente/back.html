@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<title>certificados CendeNDT</title>
+		<link type="text/css" href="../vista/css/flick/jquery-ui-1.8.20.custom.css" rel="stylesheet" />
+		<script type="text/javascript" src="../vista/js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="../vista/js/jquery-ui-1.8.20.custom.min.js"></script>
+		<script type="text/javascript" src="../vista/js/cliente.js"></script>
+		<link href="../vista/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="../vista/css/style.css" rel="stylesheet">
+<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+			<!--[if lt IE 9]>
+			  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+		<!-- Le styles -->
+	</head>
+
+	<body>
+		<div class="topbar">
+			<div class="fill">
+				<div class="container">
+					<a class="brand" href="http://www.cendendt.com">Volver A Cende</a>
+					<a class="brand" href="consultar.php">Personas Certificadas</a>					         
+					<form action="login.php" class="pull-right" method=post>
+						<input class="input-small" type="text" placeholder="Usuario" name="user" required="required">
+						<input class="input-small" type="password" placeholder="Contraseña" name="pass" required="required">
+						<button class="btn" type="submit">Indentificarse</button>												
+					</form>
+					
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+				<div class="content">
+					<div class="page-header">
+						<h3>{Cliente}</h3>
+						<small>{Datos_Extras}</small>
+						
+					</div>
+					<div class="controls">				
+						<a id="op1" class="btn">
+							Registro</a>								
+<!--						<a id="op2" class="btn btn-info">-->
+<!--							Cédula </a>-->
+						<a id="op3" class="btn">
+							Apellidos	 </a>			
+					 </div>
+					<div id="ajax" class = "ajax">
+				
+				</div>												
+				<div class="row">
+					{tabla}						
+				</div>
+
+				  
+			</div>
+
+			<footer>
+				<p>&copy; Todos los derechos reservados - Cende NDT - 2012 - Desarrollado por ev_villota@hotmail.com</p>
+			</footer>
+		</div>
+	</body>
+</html>

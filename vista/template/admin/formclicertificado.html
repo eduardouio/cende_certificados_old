@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+        <title>Administrar Clientes Certificados</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Administrador CENDE">
+        <meta name="author" content="@eduardouio">
+        <script src="../vista/js/adminjs/jquery.js"> </script>
+        <script src="../vista/js/adminjs/bootstrap.min.js"> </script>    
+        <script src="../vista/js/adminjs/bootstrap-alert.js"> </script>
+        <script type="text/css">
+            $(".alert").alert()
+        </script>
+        <!-- Le styles -->
+        <link href="../vista/css/bootstrap/admin_bootstrap.css" rel="stylesheet">
+        <link type="text/css" href="../vista/css/flick/jquery-ui-1.8.20.custom.css" rel="stylesheet" />
+        <script type="text/javascript" src="../vista/js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="../vista/js/jquery-ui-1.8.20.custom.min.js"></script>
+        <style type="text/css">
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+        </style>
+        <script type="text/javascript">            
+            $(function(){
+
+                // Accordion
+                $("#accordion").accordion({ header: "h3", autoHeight: false });
+				
+            });
+
+            $(function() {
+                $( "#datepicker" ).datepicker({
+                    dateFormat: 'yy/mm/dd',
+                    changeMonth: true,
+                    changeYear: true					
+                });
+            });
+            $(function() {
+                $( "#datepicker2" ).datepicker({
+                    dateFormat: 'yy/mm/dd',
+                    changeMonth: true,
+                    changeYear: true				
+					
+                });
+            });
+
+            		
+			
+        </script>
+        <script type="text/javascript">
+                    
+            $(function() {
+                // a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
+                $( "#dialog:ui-dialog" ).dialog( "destroy" );
+		                
+                $( "#dialog-form" ).dialog({
+                    autoOpen: false,
+                    height: 350,
+                    width: 400,
+                    modal: true,
+                    show: "slide",
+                    hide: "slide",
+                    buttons: {
+                        //accion para cuando se selecciona un campo
+                        "Seleccionar": function() {                                
+				$(this).dialog("close"),
+                                $('#notas').html(''),
+                                $('#cedula').html(''),
+                                $('#identificador').html(''),
+                                $('#nombres').html('');                                
+                        },
+                        "Cancelar":function(){
+                            $(this).dialog('close');
+                        }
+                    }                });
+                //boton que lanza el cuadro
+                $( "#create-user" )
+                .button()
+                .click(function() {
+                    $( "#dialog-form" ).dialog( "open" );
+                });
+            });
+        </script>                
+
+        <script type="text/javascript">
+                    
+            $(function() {
+                // a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
+                $( "#dialog:ui-dialog" ).dialog( "destroy" );
+		                
+                $( "#agregar_certificado" ).dialog({
+                    autoOpen: false,
+                    height: 250,
+                    width: 400,
+                    modal: true,
+                    show: "slide",
+                    hide: "slide",
+                    buttons: {
+                        //accion para cuando se selecciona un campo
+                        "Seleccionar": function() {                                
+				$(this).dialog("close"),
+                                $('#id_certificado').html(''),                   
+                                $('#codigo').html(''),
+                                $('#nombre_certificado').html('');
+                        },
+                        "Cancelar":function(){
+                            $(this).dialog('close');
+                        }  }              
+                    });
+                    
+                //boton que lanza el cuadro
+                $( "#Buscar_Certificado" )
+                .button()
+                .click(function() {
+                    $( "#agregar_certificado" ).dialog("open");                    
+                });                
+                $('#buscar_cliente').autocomplete({
+		source : 'AjaxApellidos.php',
+                select : function(event,ui){
+                    $('#identificador').html(ui.item.id);
+                    $('#nombres').html(ui.item.value);
+                    $('#cedula').html(ui.item.cedula);
+                    $('#notas').html(ui.item.notas);
+                }
+	});
+        
+             $('#value_certuficado').autocomplete({
+		source : 'AjaxCertificados.php',
+                select : function(event, ui){
+                    $('#id_certificado').html(ui.item.id_metodo);                    
+                    $('#codigo').html(ui.item.codigo);
+                    $('#nombre_certificado').html(ui.item.metodo);
+                }
+               
+	});
+            });
+        </script>
+
+
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- Le fav and touch icons -->
+        <link rel="shortcut icon" href="../vista/ico/favicon.ico">
+    </head>
+
+    <body>
+        <div id="dialog-form" title="Seleccionar un Cliente">
+            <p class="validateTips">Ingrese uno de los Campos y luego seleccione.</p>
+
+                <fieldset>
+                    <label for="name">Apellidos</label>
+                    <input type="text" name="apellidos" id="buscar_cliente" class="text ui-widget-content ui-corner-all" />                   
+                </fieldset>            
+             <div id="datos_cliente">
+                        Id:<strong id="identificador"></strong><br/>
+                        Nombres:<strong id="nombres"></strong><br/>
+                        Cedula:<strong id="cedula"></strong><br/><br/>
+                        Notas:<strong id="notas"></strong>
+                    </div>
+        </div>
+        <div id="agregar_certificado" title="Seleccione un Certificado">
+            <p class="validateTips">Ingrese uno de los Campos y luego seleccione.</p>            
+                <fieldset>
+                    <label for="name">Ingrese un codigo del Certificado Ejemplo UT/III</label>
+                    <input type="text" name="certificado" id="value_certuficado" class="text ui-widget-content ui-corner-all" />                   
+                </fieldset>
+                    <div id="datos_certificados">
+                        Id:<strong id="id_certificado"></strong><br/>                        
+                        Código:<strong id="codigo"></strong><br/>
+                        Nombre:<strong id="nombre_certificado"></strong><br/>
+                    </div>
+                
+        </div>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="adminclicertificados.php">Administrador CENDE</a>
+                    <div class="nav-collapse">	
+                        <ul class="nav">
+                            <li class="active"><a href="adminclicertificados.php">Personas Certificadas</a></li>
+                            <li class="0"><a href="adminpersonas.php">Personas</a></li>
+                            <li class="0"><a href="admincertificados.php">Tipo Certificados</a></li>
+                            <li class="0"><a href="adminusuarios.php">Usuarios</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                    <p><a href="http://cendendt.com/" class="btn btn-large pull-right "> <i class="icon-off icon-black"></i>Salir</a></p>
+                </div>		  
+            </div>	  
+        </div>
+        <div class="container">            					       <a href="adminclicertificados.php?accion=new&id=0" class="btn pull-right"><i class=" icon-file icon-black"></i>Crear Nuevo Registro</a>
+            <span class="label label-info">Ingrese todos los datos solicitados a continuacion</span>
+            <h2>Clientes Certificados por CENDE</h2> 
+            <div class="alert alert-info">Aviso: Todos los datos que ingrese serán guardados en mayúsculas sin importar como los digite
+                <button data-dismiss="alert" class="close" type="button">×</button>
+            </div>
+            <a class="btn btn-info" href="adminclicertificados.php"><i class="icon-ban-circle icon-white"></i>Cancelar = Volver</a>
+
+            <form class="well" action="adminclicertificados.php" method="post">
+                <div id="accordion">
+                    <div>
+                        <h3><a href="#">Tipo Certificado</a></h3>
+                        <div>
+                            <table cellpadding="7"><tr><td>
+                                        <label>Certificado:</label>
+                                        <input id="idcertificado" type="text" class="span3" placeholder="Certificado" maxlength="50" name="id_certificado" value="{id_certificado}">
+                                    </td><td>
+                                        <label>Código:</label>
+                                        <input id="codigo_certificado" type="text" class="span3" placeholder="Cod Cert" maxlength="50" name="codigo_certificado" value="{codigo_certificado}">
+                                    </td><td>
+                                        <label>Nombre:</label>
+                                        <input id="nombre_certificado "type="text" class="span3" placeholder="Nom Cert" maxlength="50" name="nombre_certificado" value="{nombre_certificado}">
+                                    <td>
+                                        <button class="btn btn-info" id="Buscar_Certificado" > <i class="icon-search icon-white"></i>Buscar Cetificado</button>
+                                    </td>
+                                    </td></tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div>
+                        <h3><a href="#">Cliente</a></h3>
+                        <div>
+                            <table cellpadding="7"> <tr><td>
+                                        <label>Cliente:</label>
+                                        <input  id="id_cliente" type="text" class="span3" placeholder="Identificador" maxlength="50" name="id_cliente" value="{id_cliente}" required="required" >
+                                    </td><td>
+                                        <label>Nombres:</label>
+                                        <input id="nombres_cliente" type="text" class="span3" placeholder="Nombres" maxlength="50" name="nombres_cliente" value="{nombres_cliente}" required="required" >
+                                    </td><td>
+                                        <label>cédula:</label>
+                                        <input id ="cedula_cliente" type="text" class="span3" placeholder="Cedula" maxlength="50" name="ci_cliente" value="{ci_cliente}">
+                                    </td><td>
+                                        <button class="btn btn-info" id="create-user" > <i class="icon-user icon-white"></i>Buscar Cliente</button>
+
+                                    </td></tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div>
+                        <h3><a href="#">Certificacion</a></h3>
+                        <div>
+                            <table cellpadding = "7"><tr><td>
+                                        <label>Registro:</label>
+                                        <input type="text" class="span3" placeholder="Registro" maxlength="12" name="id_registro" value="{id_registro}" required="required">
+                                    </td><td>			
+                                        <label>Edisión:</label>
+                                        <input type="text" class="span3" placeholder="Edisión" maxlength="50" name="edicion" value="{edicion}">
+                                    </td><td>
+                                        <label>Fecha Certificación:</label>
+                                        <input id="datepicker" type="date" class="span3" placeholder="Seleccione" maxlength="25" name="fecha_certificacion" value="{fecha_certificacion}" required="required" >
+                                    </td><td>
+                                        <label>Fecha Recertificación:</label>
+                                        <input id="datepicker2" type="date" class="span3" placeholder="Seleccione" maxlength="25" name="fecha_vencimiento" value="{fecha_vencimiento}" required="required" >
+                                    </td></tr><tr><td>	
+                                        <label>Examinacion General:</label>
+                                        <input type="text" class="span3"  maxlength="3" placeholder="Exa Gen" name="exa_general"  value="{exa_general}" required="required" >
+                                    </td><td>	
+                                        <label>Examinacion Específica:</label>
+                                        <input type="text" class="span3"  maxlength="3" placeholder="Exa Esp" name="exa_especifica"  value="{exa_especifica}" required="required" >
+                                    </td><td>	
+                                        <label>Examinación Parcial:</label>
+                                        <input type="text" class="span3"  maxlength="3" placeholder="Exa Par" name="exa_parcial" value="{exa_parcial}" required="required" >
+                                    </td><td>	
+                                        <label>Estado Examen:</label>
+                                        <input type="text" class="span3" maxlength="50" placeholder="Examen" name="examen" value="{examen}" required="required" >
+                                        <input type="hidden" class="span3" name="t_accion" value="{t_accion}">
+                                    </td></tr><tr><td colspan="4">	
+                                        <label></label>
+                                        <button type="submit" class="btn btn-primary pull-right"><i class="icon-folder-close icon-white"></i>Guardar</button>
+                                    </td></tr>
+                            </table>
+                        </div>
+                    </div>	</div>
+            </form>
+
+            <footer>
+                <hr>
+                &copy; Todos los derechos reservados - Cende NDT - 2012 - Desarrollado por ev_villota@hotmail.com
+            </footer>
+
+        </div> <!-- /container -->
+
+    </body>
+</html>

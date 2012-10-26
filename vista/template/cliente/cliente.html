@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<title>certificados CendeNDT</title>
+		<link type="text/css" href="../vista/css/flick/jquery-ui-1.8.20.custom.css" rel="stylesheet" />
+		<script type="text/javascript" src="../vista/js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="../vista/js/jquery-ui-1.8.20.custom.min.js"></script>
+		<script type="text/javascript" src="../vista/js/cliente.js"></script>
+		<link href="../vista/css/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+		<link href="../vista/css/style.css" rel="stylesheet"/>
+
+		<style type="text/css">
+			body {
+			background-image: url(../../images/fondo%20crema.JPG);
+			background-color: #FFFFFF;
+				}
+			.Estilo7 {font-size: x-large}
+			.Estilo9 {
+			color: #000099;
+			font-size: xx-large;
+					}
+			.Estilo10 {font-size: xx-large}
+			.Estilo11 {
+				color: #000033;
+				font-size: medium;
+						}
+			.Estilo18 {font-size: xx-large; color: #0000C2; }
+			.Estilo19 {color: #003399}
+			.Estilo21 {color: #003399; font-weight: bold; }
+
+.alert {
+        border-color: #BCE8F1;
+        padding: 8px 35px 8px 14px;
+        margin-bottom: 18px;
+        color: #3A87AD;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+        background-color: #D9EDF7;
+        border: 1px solid #FBEED5;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+}
+
+.novalido {
+    background-color: #FCF8E3;
+    border: 1px solid #FBEED5;
+    border-radius: 4px 4px 4px 4px;
+    color: #C09853;
+    margin-bottom: 18px;
+    padding: 8px 35px 8px 14px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+		</style>
+
+	</head>
+<body>
+
+<table border="0" cellspacing="0" cellpadding="0" width="1180" class="table table-condensed">
+	<tbody>
+		<tr>
+			<th height="99" width="163" scope="col">
+				<param name="movie" value="../../images/logocende1.swf" />
+				<param name="quality" value="high" /><embed src="../../images/logocende1.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="65" height="88"></embed></object> 
+				<img alt="" width="84" height="51" src="../../images/cende.gif" /></th>								
+			<th width="914" scope="col">
+				<p class="Estilo7" align="right"><span class="Estilo9">C</span>APACITACI&Oacute;N EN <span class="Estilo9">E</span>NSAYOS <span class="Estilo18">N</span>O <span class="Estilo9">D</span>ESTRUCTIVOS</p>
+				<p class="Estilo11" align="right">CALIFICACI&Oacute;N, CERTIFICACI&Oacute;N, ASESORIAS E INSPECCIONES NO DESTRUCTIVAS CON NIVELES III ASNT Y ACCP</p></th>
+				<th width="94" scope="col">
+				<p class="Estilo7">
+				<img alt="" width="94" height="73" src="../../images/Imagen1.jpg" />
+				</p>
+			</th>
+		</tr>
+	</tbody>
+</table>
+
+ <p>
+ 	<img border="0" alt="" width="1181" height="12" src="../../images/Graphic.gif" editor="Webstyle3" moduleid="Default (Project)\Graphic.xws" />
+ </p>
+
+	<table border="0" cellspacing="0" cellpadding="0" width="1102" class="table table-condensed">
+		<tbody>
+			<tr>
+				<th height="73" width="205" scope="col">
+					<p align="center">
+						<script webstyle3>document.write('<scr' + 'ipt src="../../images/arquette.js" _wpro_src="../../images/arquette.js" _wpro_src="../../images/arquette.js">'+'</scr'+'ipt>');/*img src="images/Arquette.gif" moduleid="default (project)\Arquette_off.xws"*/</script>
+						<palign="center"> <img alt="" width="124" height="87" src="../../images/ECU.gif" /> 
+					</p>
+				</th>				
+				<th width="925" scope="col">
+					<div class="topbar">
+						<div class="fill">
+							<div class="container">					
+								<a class="brand" href="consultar.php">Personas Certificadas</a>					         
+								<form action="login.php" class="pull-right" method=post>
+									<input class="input-small" type="text" placeholder="Usuario" name="user" required="required">
+									<input class="input-small" type="password" placeholder="Contraseña" name="pass" required="required">
+									<button class="btn" type="submit">Indentificarse</button>												
+								</form>					
+							</div>
+						</div>
+					</div>
+
+					<div class="container">
+						<div class="content">
+							<div class="page-header">
+								<h3>{Cliente}</h3>
+								<small>{Datos_Extras}</small>			
+							</div>
+					<div class="controls">				
+						<a id="op1" class="btn">
+							Registro</a>								
+						<a id="op2" class="btn btn-info">
+							Cédula </a>
+						<a id="op3" class="btn">
+							Apellidos	 </a>			
+					 </div>
+					<div id="ajax" class = "ajax">
+				
+					</div>												
+					<div class="row">
+					{tabla}	
+					{alerta}
+										
+					</div>		
+					
+				</div>			
+			</div>
+			</th>
+
+		<th height="19" scope="row">
+		</th>
+		</tr>
+		</tbody>
+	</table>
+<p><img border="0" alt="" width="1181" height="12" src="../../images/Graphic.gif" editor="Webstyle3" moduleid="Default (Project)\Graphic.xws" /></p>
+<footer>
+				<p>&copy; Todos los derechos reservados - Cende NDT - 2012 - Desarrollado por ev_villota@hotmail.com</p>
+			</footer>
+</body>
+</html>
